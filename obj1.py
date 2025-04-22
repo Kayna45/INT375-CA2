@@ -13,7 +13,7 @@ df['Age_Group'] = pd.cut(df['Age'], bins=[0, 18, 35, 60, 100],
 # Set theme
 sns.set_theme(style="whitegrid")
 
-# 1.  Pie Chart: Gender Distribution
+# 1. Pie Chart: Gender Distribution
 gender_counts = df['Gender'].value_counts()
 plt.figure(figsize=(6, 6))
 plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140, 
@@ -23,7 +23,7 @@ plt.axis('equal')
 plt.tight_layout()
 plt.show()
 
-# 2. 📊 Histogram: Age Distribution
+# 2. Histogram: Age Distribution
 plt.figure(figsize=(8, 5))
 sns.histplot(df['Age'], bins=30, kde=True, color='teal')
 plt.title("Patient Age Distribution")
@@ -32,7 +32,7 @@ plt.ylabel("Number of Patients")
 plt.tight_layout()
 plt.show()
 
-# 3. 🔄 Count Plot: Admission Type by Gender
+# 3. Count Plot: Admission Type by Gender
 plt.figure(figsize=(8, 5))
 sns.countplot(data=df, x='Admission_Type', hue='Gender', palette='coolwarm')
 plt.title("Admission Types by Gender")
@@ -42,7 +42,7 @@ plt.legend(title="Gender")
 plt.tight_layout()
 plt.show()
 
-# 4. 🎯 Count Plot: Treatment Plan by Gender
+# 4. Count Plot: Treatment Plan by Gender
 plt.figure(figsize=(8, 5))
 sns.countplot(data=df, x='Treatment_Plan', hue='Gender', palette='Set3')
 plt.title("Treatment Plans by Gender")
